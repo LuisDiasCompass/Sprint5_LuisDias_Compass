@@ -4,5 +4,5 @@ Dado('que acessa a página inicial do e-commerce') do
 end
 
 Então('o logotipo, o header e as categorias de produtos são exibidos corretamente') do
-    expect(@home).to have_css '.logo'
+    expect(@home).to have_logo
 end

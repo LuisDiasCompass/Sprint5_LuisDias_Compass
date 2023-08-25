@@ -1,9 +1,5 @@
-require 'capybara/dsl'
-
-class HomePage
-    include Capybara::DSL 
-
-    def load
-        visit('https://advantageonlineshopping.com/#/')
-    end
+class HomePage < SitePrism::Page
+    set_url '/'
+    
+    element :logo, '.logo'
 end
