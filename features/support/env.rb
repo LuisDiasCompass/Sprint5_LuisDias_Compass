@@ -4,6 +4,7 @@ require 'rspec'
 require 'capybara'
 require 'capybara/cucumber'
 require 'site_prism'
+require 'pry'
 
 ENVIRONMENT = ENV['ENVIRONMENT']
 ENVIRONMENT_CONFIG = YAML.load_file(File.dirname(__FILE__) + "/environments/#{ENVIRONMENT}.yml")
