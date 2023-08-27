@@ -9,20 +9,20 @@ Funcionalidade: Home Page
 
     Contexto: Estar na home page
         Dado que acessa a página inicial do e-commerce
-
+    
     Cenário: Carregamento da página
         Então o logotipo, o header e as categorias de produtos são exibidos corretamente
 
     Cenário: Realizar pesquisa de um produto
-        E com o campo de pesquisa aberto
         Quando o digitar o nome de um produto na área de pesquisa
         Então deve ver uma lista de resultados
-
+        E deve ver o nome, imagem e preço dos itens
+    
     Esquema do Cenário: Links da seção FOLLOW US
-        Quando clica no "<botão>"
-        Então "<evento>"
+        Quando clica no botão "<botão>"
+        Então é redirecionado para página correta "<evento>"
         Exemplos:
-        |botão   |evento  |
-        |facebook|facebook|
-        |twitter |twitter |
-        |linkedin|linkedin|
+        |botão       |evento  |
+        |btn_facebook|facebook|
+        |btn_twitter |twitter |
+        |btn_linkedin|linkedin|
