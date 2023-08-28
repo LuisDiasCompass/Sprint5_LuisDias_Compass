@@ -16,6 +16,7 @@ module Pages
             header.input_search.set product
             wait_loader
             header.btn_search.click
+            header.btn_close_search.click
         end
 
         def wait_loader

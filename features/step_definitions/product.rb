@@ -1,9 +1,12 @@
-Dado('que acessa a página de um produto') do
-    @home = Pages::HomePage.new
-    @home.load
-    @home.search_for('speakers')
-    @search_results = Pages::SearchResult.new
-    @home.header.btn_close_search.click
+Dado('que esteja na página de um produto') do
+        steps %{
+            Dado que esteja na página inicial do e-commerce
+            Quando realizar a pesquisa de um produto válido
+            E acessar a página do produto
+        }
+end
+
+Quando('acessar a página do produto') do
     @search_results.access_product_of_list(0)
     @product = Pages::ProductPage.new
 end

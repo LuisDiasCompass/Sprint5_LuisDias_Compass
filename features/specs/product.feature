@@ -8,7 +8,7 @@ Funcionalidade: Product
     PARA para adicionar ao carrinho
 
     Contexto: Estar na página do produto
-        Dado que acessa a página de um produto
+        Dado que esteja na página de um produto
     
     Cenário: Carregamento da página
         Então a página do produto é exibida corretamente
