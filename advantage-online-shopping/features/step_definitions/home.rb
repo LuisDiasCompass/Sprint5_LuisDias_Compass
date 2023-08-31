@@ -4,8 +4,8 @@ Dado('que esteja na página inicial do e-commerce') do
 end
 
 Então('a home page é exibida corretamente') do
-    expect(@home).to have_header
-    expect(@home).to have_footer
+    expect(@home.header.visible?).to be_truthy
+    expect(@home.footer.visible?).to be_truthy
     expect(@home.category.all_there?).to be_truthy
 end
 
@@ -16,7 +16,9 @@ Quando('realizar a pesquisa de um produto válido') do
 end
   
 Então('deve ver uma lista de resultados') do
-    expect(@search_results).to have_products
+    @search_results.products.each do |element|
+        expect(element.visible?).to be_truthy
+    end
 end
 
 Então('deve ver a descrição dos itens') do

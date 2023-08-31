@@ -12,8 +12,8 @@ Quando('acessar a página do produto') do
 end
   
 Então('a página do produto é exibida corretamente') do
-    expect(@product).to have_product_img
-    expect(@product).to have_product_description
+    expect(@product.product_img.visible?).to be_truthy
+    expect(@product.product_description.visible?).to be_truthy
 end
 
 Quando('selecionar uma cor') do
