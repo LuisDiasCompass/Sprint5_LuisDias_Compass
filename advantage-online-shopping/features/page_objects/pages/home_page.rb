@@ -8,6 +8,7 @@ module Pages
         section :header, Sections::Header, 'header'
         section :footer, Sections::Footer, 'footer'
         section :category, Sections::OurProducts, '#our_products'
+        elements :btn_slider_steps, '.slider-steps .ng-scope'
         element :loader, 'body > .loader'
         
 

@@ -11,18 +11,22 @@ Funcionalidade: Home Page
         Dado que esteja na página inicial do e-commerce
     
     Cenário: Carregamento da página
-        Então o logotipo, o header e as categorias de produtos são exibidos corretamente
-    @test
+        Então a home page é exibida corretamente
+    
     Cenário: Realizar pesquisa de um produto
         Quando realizar a pesquisa de um produto válido
         Então deve ver uma lista de resultados
-        E deve ver o nome, imagem e preço dos itens
-
+        E deve ver a descrição dos itens
+    
+    Cenário: Carrossel de imagens da seção EXPLORER NOW
+        Quando selecionar uma imagem
+        Então a imagem é marcada como selecionada
+    
     Esquema do Cenário: Links da seção FOLLOW US
-        Quando clica no botão "<botão>" da seção FOLLOW US
-        Então é redirecionado para página correta "<page>"
+        Quando acessa a rede social "<link>" da seção FOLLOW US
+        Então é redirecionado para página correta "<page_url>"
         Exemplos:
-        |botão       |page    |
-        |btn_facebook|facebook|
-        |btn_twitter |twitter |
-        |btn_linkedin|linkedin|
+        |link         |page_url    |
+        |facebook_link|facebook_url|
+        |twitter_link |twitter_url |
+        |linkedin_link|linkedin_url|

@@ -3,7 +3,7 @@ Dado('que esteja na página inicial do e-commerce') do
     @home.load
 end
 
-Então('o logotipo, o header e as categorias de produtos são exibidos corretamente') do
+Então('a home page é exibida corretamente') do
     expect(@home).to have_header
     expect(@home).to have_footer
     expect(@home.category.all_there?).to be_truthy
@@ -19,19 +19,28 @@ Então('deve ver uma lista de resultados') do
     expect(@search_results).to have_products
 end
 
-Então('deve ver o nome, imagem e preço dos itens') do
+Então('deve ver a descrição dos itens') do
     @search_results.products.each do |element|
         expect(element.all_there?).to be_truthy
     end
 end
 
-Quando('clica no botão {string} da seção FOLLOW US') do |btn|
-    @home.wait_loader
-    @home.footer.click_btn_follow_us(btn.to_sym)
+Quando('selecionar uma imagem') do
+    @home.btn_slider_steps.last.click
+end
+    
+Então('a imagem é marcada como selecionada') do
+    expect(@home.btn_slider_steps.last['class']).to include('selected')
+end
+
+Quando('acessa a rede social {string} da seção FOLLOW US') do |link|
+    follow_us = Factory::Static.static_data_two_args('footer_follow_us', link)
+    @home.footer.public_send(follow_us.to_sym).click
     popup = page.driver.browser.window_handles.last
     page.driver.browser.switch_to.window(popup)
 end
   
-Então('é redirecionado para página correta {string}') do |redirect_page|
-    expect(page.driver.current_url).to include(redirect_page)
+Então('é redirecionado para página correta {string}') do |page_url|
+    follow_us = Factory::Static.static_data_two_args('footer_follow_us', page_url)
+    expect(page.driver.current_url).to include(follow_us)
 end

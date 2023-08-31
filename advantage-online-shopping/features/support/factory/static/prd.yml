@@ -1,0 +1,11 @@
+valid_product: 'speakers'
+
+footer_follow_us:
+  facebook_link: 'btn_facebook'
+  facebook_url: 'facebook.com'
+
+  twitter_link: 'btn_twitter'
+  twitter_url: 'twitter.com'
+
+  linkedin_link: 'btn_linkedin'
+  linkedin_url: 'linkedin.com'
