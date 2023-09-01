@@ -42,12 +42,49 @@ Então('exibe a mensagem para campo obrigatório') do
 end
 
 Quando('acessa a funcionalidade para criação de nova conta') do
+    @home.wait_loader
     @home.login_modal.btn_create_account.click
 end
   
 Então('é redirecionado para página de cadastro') do
-    sleep 1
     @register_page = Pages::RegisterPage.new
-    expect(@register_page.current_url).not_to include('/register')
+    expect(@register_page.form_title.visible?).to be_truthy
+    expect(page.current_url).to include('/register')
+end
+
+Dado('está logado no sistema e com o menu USER aberto') do
+    steps %{
+        Quando realiza o login com usuário válido
+        E o menu USER está aberto
+    }
+end
+
+Quando('realiza o logout') do
+    @home.header.btn_logged_in_sign_out.click
+end
+  
+Então('volta para home como usuário não logado no sistema') do
+    @home.header.wait_until_menu_user_invisible
+    expect(@home.header.has_logged_in_username?).to be_falsey
+end
+  
+Quando('acessa a funcionalidade de gerenciamento de conta') do
+    @home.header.btn_logged_in_my_account.click
+end
+
+Então('é redirecionado para página da conta') do
+    @my_account_page = Pages::MyAccountPage.new
+    expect(@my_account_page.my_account_title.visible?).to be_truthy
+    expect(page.current_url).to include('/myAccount')
+end
+  
+Quando('acessa a funcionalidade de gerenciamento de pedidos') do
+    @home.header.btn_logged_in_my_orders.click
+end
+  
+Então('é redirecionado para página de pedidos') do
+    @my_orders_page = Pages::MyOrdersPage.new
+    expect(@my_orders_page.my_orders_title.visible?).to be_truthy
+    expect(page.current_url).to include('/MyOrders')
 end
   

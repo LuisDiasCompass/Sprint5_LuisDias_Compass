@@ -44,5 +44,5 @@ end
   
 Então('é redirecionado para página correta {string}') do |page_url|
     follow_us = Factory::Static.static_data_two_args('footer_follow_us', page_url)
-    expect(page.driver.current_url).to include(follow_us)
+    expect(page.current_url).to include(follow_us)
 end

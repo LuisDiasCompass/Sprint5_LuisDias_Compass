@@ -29,16 +29,23 @@ Funcionalidade: User
     Cenário: Login com campos vazios
         Quando deixa o login com usuário e senha vazios
         Então exibe a mensagem para campo obrigatório
-        
-    Cenário: Redirecionamento para página de criação de conta
+    
+    Cenário: Redirecionamento para página de cadastro
         Quando acessa a funcionalidade para criação de nova conta
         Então é redirecionado para página de cadastro
-    @test
-    Esquema do Cenário: Opções do menu USER para usuário logado
-        Quando clica no "<botão>"
-        Então "<evento>"
-        Exemplos:
-        |botão     |evento                                               |
-        |My account|é redirecionado para página de gerenciamento da conta|
-        |My orders |é redirecionado para página de pedidos               |
-        |Sign out  |volta para home como usuário não logado              |
+    
+    Cenário: Logout
+        E está logado no sistema e com o menu USER aberto
+        Quando realiza o logout
+        Então volta para home como usuário não logado no sistema
+    
+    Cenário: Acesso ao My Account
+        E está logado no sistema e com o menu USER aberto
+        Quando acessa a funcionalidade de gerenciamento de conta
+        Então é redirecionado para página da conta
+    
+    Cenário: Acesso ao My Orders
+        E está logado no sistema e com o menu USER aberto
+        Quando acessa a funcionalidade de gerenciamento de pedidos
+        Então é redirecionado para página de pedidos
+        
