@@ -17,7 +17,7 @@ Funcionalidade: Product
         Quando selecionar uma cor
         Então a cor é marcada como selecionada 
     
-    Esquema do Cenário: Validar seleção de quantidade
+    Esquema do Cenário: Validar valores limite da seleção de quantidade
         E o campo quantidade tem o valor "<quantidade>"
         Quando muda a quantidade "<evento>"
         Então o campo quantidade tem seu valor alterado "<valor>"
@@ -31,7 +31,7 @@ Funcionalidade: Product
         |999       |diminuir_quantidade|998  |
     
 
-    Esquema do Cenário: Validar a seleção de quantidade digitando no campo
+    Esquema do Cenário: Validar valores limite da seleção de quantidade digitando no campo
         Quando insere uma quantidade "<quantidade>"
         Então o campo quantidade tem seu valor alterado "<valor>"
         Exemplos:
@@ -49,8 +49,4 @@ Funcionalidade: Product
     Cenário: Retornar para categoria do produto
         Quando volta para página de categorias
         Então é redirecionado para página da categoria do produto
-    
-    Cenário: Retornar para home
-        Quando retorna para home
-        Então a home page é exibida corretamente
-    
+        

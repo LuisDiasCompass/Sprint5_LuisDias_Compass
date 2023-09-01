@@ -1,6 +1,5 @@
 require_relative '../sections/header'
 require_relative '../sections/footer'
-require_relative '../sections/login_modal'
 
 module Pages
     class ProductPage < SitePrism::Page
@@ -8,7 +7,6 @@ module Pages
 
         section :header, Sections::Header, 'header'
         section :footer, Sections::Footer, 'footer'
-        section :login_modal, Sections::LoginModal, 'login-modal .PopUp'
         elements :select_color_list, '.colors #rabbit'
         element :product_img, '#mainImg'
         element :product_description, '#Description'
@@ -17,7 +15,6 @@ module Pages
         element :btn_plus, '.plus'
         element :input_quantity, '[name="quantity"]'
         element :btn_add_to_cart, '[name="save_to_cart"]'
-        element :btn_home, '.pages [translate="HOME"]'
         element :btn_category, '.pages [ng-click*="category"]'
 
         def set_quantity_by_button(button)

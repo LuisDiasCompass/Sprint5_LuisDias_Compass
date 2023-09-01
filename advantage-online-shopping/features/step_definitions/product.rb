@@ -57,7 +57,3 @@ end
 Então('é redirecionado para página da categoria do produto') do
     expect(page.driver.current_url).to include('category')
 end
-  
-Quando('retorna para home') do
-    @product.btn_home.click
-end

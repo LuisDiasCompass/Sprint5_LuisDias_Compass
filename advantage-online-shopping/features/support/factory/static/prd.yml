@@ -22,3 +22,4 @@ error_message:
   invalid_login_msg: 'Incorrect user name or password.'
   empty_password_msg: 'Password field is required'
   empty_username_msg: 'Username field is required'
+  empty_cart_msg: 'Your shopping cart is empty'
