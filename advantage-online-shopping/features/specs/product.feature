@@ -9,7 +9,7 @@ Funcionalidade: Product
 
     Contexto: Estar na página do produto
         Dado que esteja na página de um produto
-    @test
+    
     Cenário: Carregamento da página
         Então a página do produto é exibida corretamente
     

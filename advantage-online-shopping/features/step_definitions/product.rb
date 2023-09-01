@@ -21,7 +21,7 @@ Quando('selecionar uma cor') do
 end
   
 Então('a cor é marcada como selecionada') do
-    expect(@product.select_color.last['class']).to include('colorSelected')
+    expect(@product.select_color_list.last['class']).to include('colorSelected')
 end
 
 Dado('o campo quantidade tem o valor {string}') do |quantity|

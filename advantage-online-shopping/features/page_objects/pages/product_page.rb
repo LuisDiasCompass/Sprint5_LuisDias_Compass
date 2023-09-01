@@ -1,7 +1,14 @@
+require_relative '../sections/header'
+require_relative '../sections/footer'
+require_relative '../sections/login_modal'
+
 module Pages
     class ProductPage < SitePrism::Page
         set_url '/product'
 
+        section :header, Sections::Header, 'header'
+        section :footer, Sections::Footer, 'footer'
+        section :login_modal, Sections::LoginModal, 'login-modal .PopUp'
         elements :select_color_list, '.colors #rabbit'
         element :product_img, '#mainImg'
         element :product_description, '#Description'

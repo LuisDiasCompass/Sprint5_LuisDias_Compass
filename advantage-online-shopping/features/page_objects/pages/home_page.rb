@@ -1,6 +1,8 @@
 require_relative '../sections/header'
 require_relative '../sections/footer'
 require_relative '../sections/our_products'
+require_relative '../sections/login_modal'
+
 module Pages
     class HomePage < SitePrism::Page
         set_url '/'
@@ -8,6 +10,7 @@ module Pages
         section :header, Sections::Header, 'header'
         section :footer, Sections::Footer, 'footer'
         section :category, Sections::OurProducts, '#our_products'
+        section :login_modal, Sections::LoginModal, 'login-modal .PopUp'
         elements :btn_slider_steps, '.slider-steps .ng-scope'
         element :loader, 'body > .loader'
         

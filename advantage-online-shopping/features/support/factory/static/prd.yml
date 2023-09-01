@@ -9,3 +9,20 @@ footer_follow_us:
 
   linkedin_link: 'btn_linkedin'
   linkedin_url: 'linkedin.com'
+
+valid_user_data:
+  username: 'testAccount'
+  password: 'Ab123'
+
+invalid_user_data:
+  username: 'abcxyz'
+  password: '54321'
+
+empty_user_data:
+  username: ''
+  password: ''
+
+error_message:
+  invalid_login_msg: 'Incorrect user name or password.'
+  empty_password_msg: 'Password field is required'
+  empty_username_msg: 'Username field is required'
