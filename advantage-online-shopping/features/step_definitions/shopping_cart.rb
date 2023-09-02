@@ -48,7 +48,7 @@ Dado('que adiciona um item no carrinho e acessa a página do carrinho') do
   
   Então('é redirecionado para página de pagamento') do
     @order_payment = Pages::OrderPaymentPage.new
-    expect(@order_payment.all_there?).to be_truthy
+    expect(@order_payment.user_order.visible?).to be_truthy
     expect(page.current_url).to include('/orderPayment')
   end
   

@@ -41,13 +41,14 @@ Então('o campo quantidade tem seu valor alterado {string}') do |value|
 end
 
 Quando('adiciona uma quantidade do item no carrinho') do
-    @product.input_quantity.set(5)
+    @valid_quantity = Factory::Dynamic.valid_product_quantity['quantity']
+    @product.input_quantity.set @valid_quantity
     @product.btn_add_to_cart.click
 end
   
 Então('o item é adicionado corretamente') do
     expect(@home.header.tool_tip_cart_product_name.last.text).to include(@product.product_name.text.slice(0..20))
-    expect(@home.header.quantity_last_product_add_in_cart.text).to include('5')
+    expect(@home.header.quantity_last_product_add_in_cart.text).to include(@valid_quantity)
 end
 
 Quando('o mouse está sobre o link do carrinho') do
