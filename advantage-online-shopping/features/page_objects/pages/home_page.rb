@@ -10,7 +10,7 @@ module Pages
         
         section :header, Sections::Header, 'header'
         section :footer, Sections::Footer, 'footer'
-        section :category, Sections::OurProducts, '#our_products'
+        section :our_products, Sections::OurProducts, '#our_products'
         section :login_modal, Sections::LoginModal, 'login-modal .PopUp'
         section :contact_us, Sections::ContactUs, '#contact_us'
         elements :btn_slider_steps, '.slider-steps .ng-scope'

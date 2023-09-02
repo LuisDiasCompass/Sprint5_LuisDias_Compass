@@ -18,6 +18,18 @@ Funcionalidade: Home Page
         Então deve ver uma lista de resultados
         E deve ver a descrição dos itens
     
+    Esquema do Cenário: Acessar as categorias de produtos
+        Quando acessa uma categoria "<categoria>"
+        E deve ver uma lista de resultados
+        E deve ver a descrição dos itens
+        Exemplos:
+        |categoria |
+        |speakers  |
+        |tablets   |
+        |laptops   |
+        |mice      |
+        |headphones|
+
     Cenário: Validar carrossel de imagens da seção EXPLORER NOW
         Quando selecionar uma imagem
         Então a imagem é marcada como selecionada

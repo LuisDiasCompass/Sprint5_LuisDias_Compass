@@ -9,9 +9,14 @@ Funcionalidade: Checkout
 
     Contexto: Estar na página de checkout
         Dado que realiza o checkout de compra válida
+        E que está na seção de seleção de pagamento
 
     Cenário: Finalizar compra com cartão de crédito válido
-        E está na seção de seleção de pagamento
         Quando seleciona a opção cartão de credito
-        E realiza o pagamento com dados válidos
+        E realiza o pagamento com cartão de crédito válido
+        Então a compra é realizada com sucesso
+    
+    Cenário: Finalizar compra com SafePay
+        Quando seleciona a opção SafePay
+        E realiza o pagamento com credenciais válidas
         Então a compra é realizada com sucesso

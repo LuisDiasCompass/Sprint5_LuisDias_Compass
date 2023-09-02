@@ -7,7 +7,7 @@ Dado('que realiza o checkout de compra válida') do
     @order_payment_page = Pages::OrderPaymentPage.new
 end
   
-Dado('está na seção de seleção de pagamento') do
+Dado('que está na seção de seleção de pagamento') do
     @order_payment_page.shipping_details_btn_next.click
 end
   
@@ -15,7 +15,7 @@ Quando('seleciona a opção cartão de credito') do
     @order_payment_page.check_radio_mastercredit_payment.click
 end
   
-Quando('realiza o pagamento com dados válidos') do
+Quando('realiza o pagamento com cartão de crédito válido') do
     valid_card_data = Factory::Dynamic.valid_data_form_credit_card
     if @order_payment_page.saved_card.visible?
         @order_payment_page.saved_card_btn_edit.click
@@ -30,4 +30,16 @@ end
   
 Então('a compra é realizada com sucesso') do
     expect(@order_payment_page.order_payment_success.visible?).to be_truthy
+end
+
+Quando('seleciona a opção SafePay') do
+    @order_payment_page.check_radio_safepay_payment.click
+end
+  
+Quando('realiza o pagamento com credenciais válidas') do
+    username = Factory::Static.static_data_two_args('valid_user_safepay_data', 'username')
+    password = Factory::Static.static_data_two_args('valid_user_safepay_data', 'password')
+    @order_payment_page.safepay_input_username.set username
+    @order_payment_page.safepay_input_password.set password
+    @order_payment_page.safepay_btn_pay_now.click
 end

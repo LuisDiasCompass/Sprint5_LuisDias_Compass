@@ -1,30 +1,34 @@
 Dado('que esteja na página inicial do e-commerce') do
     @home = Pages::HomePage.new
     @home.load
+    @products_list = Pages::ProductsList.new
 end
 
 Então('a home page é exibida corretamente') do
     expect(@home.header.visible?).to be_truthy
     expect(@home.footer.visible?).to be_truthy
-    expect(@home.category.all_there?).to be_truthy
+    expect(@home.our_products.all_there?).to be_truthy
 end
 
 Quando('realizar a pesquisa de um produto válido') do
     valid_product = Factory::Static.static_data('valid_product')
     @home.search_for(valid_product)
-    @search_results = Pages::SearchResult.new
 end
   
 Então('deve ver uma lista de resultados') do
-    @search_results.products.each do |element|
+    @products_list.products.each do |element|
         expect(element.visible?).to be_truthy
     end
 end
 
 Então('deve ver a descrição dos itens') do
-    @search_results.products.each do |element|
+    @products_list.products.each do |element|
         expect(element.all_there?).to be_truthy
     end
+end
+
+Quando('acessa uma categoria {string}') do |categoria|
+    @home.our_products.public_send(categoria).click
 end
 
 Quando('selecionar uma imagem') do
@@ -75,3 +79,4 @@ end
 Quando('retornar para home através do logo') do
     @home.header.logo.click
 end
+

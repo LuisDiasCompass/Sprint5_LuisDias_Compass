@@ -7,7 +7,7 @@ Dado('que esteja na página de um produto') do
 end
 
 Quando('acessar a página do produto') do
-    @search_results.access_product_of_list(0)
+    @products_list.access_product_of_list(0)
     @product = Pages::ProductPage.new
 end
   

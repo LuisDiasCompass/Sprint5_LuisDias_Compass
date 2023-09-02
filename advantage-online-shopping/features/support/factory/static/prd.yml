@@ -18,6 +18,10 @@ invalid_user_data:
   username: 'abcxyz'
   password: '54321'
 
+valid_user_safepay_data:
+  username: 'testSafePay'
+  password: '321Yz'
+
 message:
   invalid_login_msg: 'Incorrect user name or password.'
   empty_password_msg: 'Password field is required'
