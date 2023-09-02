@@ -20,10 +20,10 @@ Quando('realiza o login com usuário {string} e senha {string}') do |username, p
     username = Factory::Static.static_data_two_args(username, 'username')
     password = Factory::Static.static_data_two_args(password, 'password')
     @home.login_modal.login(username, password)
-    @home.wait_loader
 end
   
 Então('exibe a mensagem {string} para login inválido') do |invalid_login|
+    sleep 1
     invalid_login_msg = Factory::Static.static_data_two_args('message', invalid_login)
     expect(@home.login_modal.login_error_msg.text).to eq invalid_login_msg
 end
