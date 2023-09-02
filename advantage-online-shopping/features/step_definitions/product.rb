@@ -46,8 +46,22 @@ Quando('adiciona uma quantidade do item no carrinho') do
 end
   
 Então('o item é adicionado corretamente') do
-    expect(@home.header.product_name_in_cart.last.text).to include(@product.product_name.text.slice(0..20))
+    expect(@home.header.tool_tip_cart_product_name.last.text).to include(@product.product_name.text.slice(0..20))
     expect(@home.header.quantity_last_product_add_in_cart.text).to include('5')
+end
+
+Quando('o mouse está sobre o link do carrinho') do
+    @product.header.btn_cart.hover
+end
+
+Então('o menu do carrinho é aberto') do
+    expect(@home.header.tool_tip_cart.visible?).to be_truthy
+end
+  
+Então('contém o produto e opções de remover e checkout') do
+    expect(@home.header.tool_tip_cart_product_name.first.visible?).to be_truthy
+    expect(@home.header.tool_tip_cart_btn_remove.first.visible?).to be_truthy
+    expect(@home.header.tool_tip_cart_btn_checkout.visible?).to be_truthy
 end
   
 Quando('volta para página de categorias') do

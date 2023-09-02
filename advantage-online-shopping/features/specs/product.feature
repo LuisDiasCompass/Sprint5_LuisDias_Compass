@@ -45,8 +45,15 @@ Funcionalidade: Product
     Cenário: Adicionar ao carrinho
         Quando adiciona uma quantidade do item no carrinho
         Então o item é adicionado corretamente
+
+    Cenário: Validar acesso as funções do carrinho no menu superior
+        E adiciona uma quantidade do item no carrinho
+        E retornar para home através do logo
+        Quando o mouse está sobre o link do carrinho
+        Então o menu do carrinho é aberto
+        E contém o produto e opções de remover e checkout
     
     Cenário: Retornar para categoria do produto
         Quando volta para página de categorias
         Então é redirecionado para página da categoria do produto
-        
+    

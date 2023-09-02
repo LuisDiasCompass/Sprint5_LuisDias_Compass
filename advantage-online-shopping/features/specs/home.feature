@@ -18,9 +18,17 @@ Funcionalidade: Home Page
         Então deve ver uma lista de resultados
         E deve ver a descrição dos itens
     
-    Cenário: Carrossel de imagens da seção EXPLORER NOW
+    Cenário: Validar carrossel de imagens da seção EXPLORER NOW
         Quando selecionar uma imagem
         Então a imagem é marcada como selecionada
+    
+    Cenário: Validar redirecionamento para o chat
+        Quando acessa a funcionalidade chat
+        Então o chat é aberto em nova janela
+    
+    Cenário: Validar fomulário da seção CONTACT US
+        Quando envia o formulário de contato com dados válidos
+        Então uma confirmação é exibida
     
     Esquema do Cenário: Links da seção FOLLOW US
         Quando acessa a rede social "<link>" da seção FOLLOW US

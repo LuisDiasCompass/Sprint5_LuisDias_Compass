@@ -39,7 +39,7 @@ Dado('que adiciona um item no carrinho e acessa a página do carrinho') do
     expect(page.current_url).to include('/login')
   end
 
-  Dado('que esteja logado no sitema') do
+  Dado('que esteja logado no sistema') do
     steps %{
         Quando o menu USER está aberto
         E realiza o login com usuário válido

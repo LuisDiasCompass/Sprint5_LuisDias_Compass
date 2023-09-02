@@ -10,20 +10,20 @@ Funcionalidade: Shopping Cart
     Contexto: Estar na página do carrinho com itens
         Dado que adiciona um item no carrinho e acessa a página do carrinho
     
-    Esquema do Cenário: Editar iten do carrinho
+    Cenário: Editar iten do carrinho
         Quando realiza a ação para editar um item do carrinho
         Então é redirecionado para página do produto
     
-    Esquema do Cenário: Remover iten do carrinho
+    Cenário: Remover iten do carrinho
         Quando realiza a ação para remover um item do carrinho
         Então o item é removido
         E uma tela de carrinho vazio é exibida
     
-    Esquema do Cenário: Checkout de usuário não logado no sistema
+    Cenário: Checkout de usuário não logado no sistema
         Quando realiza o Checkout
         Então é redirecionado para página de login
     
-    Esquema do Cenário: Checkout de usuário logado no sistema
-        E esteja logado no sistema
+    Cenário: Checkout de usuário logado no sistema
+        E que esteja logado no sistema
         Quando realiza o Checkout
         Então é redirecionado para página de pagamento

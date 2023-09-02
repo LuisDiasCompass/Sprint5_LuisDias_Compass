@@ -35,6 +35,31 @@ Então('a imagem é marcada como selecionada') do
     expect(@home.btn_slider_steps.last['class']).to include('selected')
 end
 
+Quando('acessa a funcionalidade chat') do
+    @home.contact_us.btn_chat.click
+end
+  
+Então('o chat é aberto em nova janela') do
+    popup = page.driver.browser.window_handles.last
+    page.driver.browser.switch_to.window(popup)
+    expect(page.current_url).to include('/chat')
+end
+
+Quando('envia o formulário de contato com dados válidos') do
+    data_form = Factory::Dynamic.valid_data_form_contact_us
+    @home.contact_us.select_category_list.first.click
+    @home.contact_us.select_products_list.first.click
+    @home.contact_us.input_email.set data_form[:email]
+    @home.contact_us.text_area.set data_form[:message]
+    @home.contact_us.btn_send.click
+end
+  
+Então('uma confirmação é exibida') do
+    @home.contact_us.wait_until_send_confirme_label_visible
+    message_ok = Factory::Static.static_data_two_args('message', 'contact_us_form_send_ok_msg')
+    expect(@home.contact_us.send_confirme_label.text).to eq message_ok
+end
+
 Quando('acessa a rede social {string} da seção FOLLOW US') do |link|
     follow_us = Factory::Static.static_data_two_args('footer_follow_us', link)
     @home.footer.public_send(follow_us.to_sym).click
@@ -45,4 +70,8 @@ end
 Então('é redirecionado para página correta {string}') do |page_url|
     follow_us = Factory::Static.static_data_two_args('footer_follow_us', page_url)
     expect(page.current_url).to include(follow_us)
+end
+
+Quando('retornar para home através do logo') do
+    @home.header.logo.click
 end

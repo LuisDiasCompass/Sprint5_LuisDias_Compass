@@ -2,6 +2,7 @@ require_relative '../sections/header'
 require_relative '../sections/footer'
 require_relative '../sections/our_products'
 require_relative '../sections/login_modal'
+require_relative '../sections/contact_us'
 
 module Pages
     class HomePage < SitePrism::Page
@@ -11,10 +12,10 @@ module Pages
         section :footer, Sections::Footer, 'footer'
         section :category, Sections::OurProducts, '#our_products'
         section :login_modal, Sections::LoginModal, 'login-modal .PopUp'
+        section :contact_us, Sections::ContactUs, '#contact_us'
         elements :btn_slider_steps, '.slider-steps .ng-scope'
         element :loader, 'body > .loader'
         
-
         def search_for(product)
             header.btn_search.click
             header.input_search.set product

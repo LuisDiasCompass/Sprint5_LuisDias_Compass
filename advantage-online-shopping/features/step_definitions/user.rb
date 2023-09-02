@@ -24,7 +24,7 @@ Quando('realiza o login com usuário {string} e senha {string}') do |username, p
 end
   
 Então('exibe a mensagem {string} para login inválido') do |invalid_login|
-    invalid_login_msg = Factory::Static.static_data_two_args('error_message', invalid_login)
+    invalid_login_msg = Factory::Static.static_data_two_args('message', invalid_login)
     expect(@home.login_modal.login_error_msg.text).to eq invalid_login_msg
 end
 
@@ -35,8 +35,8 @@ Quando('deixa o login com usuário e senha vazios') do
 end
   
 Então('exibe a mensagem para campo obrigatório') do
-    empty_username_msg = Factory::Static.static_data_two_args('error_message', 'empty_username_msg')
-    empty_password_msg = Factory::Static.static_data_two_args('error_message', 'empty_password_msg')
+    empty_username_msg = Factory::Static.static_data_two_args('message', 'empty_username_msg')
+    empty_password_msg = Factory::Static.static_data_two_args('message', 'empty_password_msg')
     expect(@home.login_modal.label_username.text).to eq empty_username_msg
     expect(@home.login_modal.label_password.text).to eq empty_password_msg
 end
