@@ -7,7 +7,7 @@ Este é um projeto de automação do site Advantage Online Shopping desenvolvido
 A proposta foi elaborar um mapa mental do site, utilizá-lo como base para criar cenários de testes utilizando a linguagem Gherkin e automatizá-los utilizando a linguagem de programação Ruby juntamente com alguns recursos como Cucumber, Capybara, SitePrism e Selenium. Foram utilizados também massa de dados estática, dinâmica (Faker) e geração de reports automatizados com o Cucumber.
 
 ## Mapa do site Advantage Online Shopping
-Você pode encontrar o arquivo do mapa [clicando aqui](/mapa-mental/)
+Você pode encontrar o arquivo do mapa [clicando aqui](/mapa-mental)
 	
 ![Advantage Online Shopping Map](/mapa-mental/advantage-online-shopping.png)
 
@@ -17,7 +17,7 @@ Você pode encontrar o arquivo do mapa [clicando aqui](/mapa-mental/)
 
 2. Crie uma pasta onde você colocará os arquivos e abra um terminal do Git Bash a partir dela. Para isso você também precisa ter o [Git](https://git-scm.com/) instalado em seu computador.
 
-3. Digite estes comandos no terminal para clonar os arquivos da calculadora:
+3. Digite estes comandos no terminal para clonar os arquivos:
    ```
    git clone https://github.com/LuisDiasCompass/Sprint5_LuisDias_Compass.git
 
@@ -128,7 +128,7 @@ Há algumas formas de executar os testes:
 ## Relatório de execução
  * Após a execução dos testes o relatório se encontrará na pasta 'reports' com o nome de 'report.html'.
  * Você pode ver um relatório de execução dos testes [clicando aqui](/reports/report.html)
- 
+
 ## Referências
    
 ### Documentação Cucumber
