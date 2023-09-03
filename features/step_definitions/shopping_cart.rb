@@ -36,7 +36,7 @@ Dado('que adiciona um item no carrinho e acessa a página do carrinho') do
   Então('é redirecionado para página de login') do
     @login_page = Pages::LoginPage.new
     expect(@login_page.all_there?).to be_truthy
-    expect(page.current_url).to include('/login')
+    expect(page.current_url).to include '/login'
   end
 
   Dado('que esteja logado no sistema') do
@@ -49,6 +49,6 @@ Dado('que adiciona um item no carrinho e acessa a página do carrinho') do
   Então('é redirecionado para página de pagamento') do
     @order_payment = Pages::OrderPaymentPage.new
     expect(@order_payment.user_order.visible?).to be_truthy
-    expect(page.current_url).to include('/orderPayment')
+    expect(page.current_url).to include '/orderPayment'
   end
-  
+   

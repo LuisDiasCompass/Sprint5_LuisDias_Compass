@@ -14,12 +14,17 @@ Funcionalidade: Home Page
     Cenário: Carregamento da página
         Então a home page é exibida corretamente
     
-    @search_product
-    Cenário: Realizar pesquisa de um produto
+    @search_valid_product
+    Cenário: Realizar pesquisa de um produto válido
         Quando realizar a pesquisa de um produto válido
         Então deve ver uma lista de resultados
         E deve ver a descrição dos itens
     
+    @search_invalid_product
+    Cenário: Realizar pesquisa de um produto inválido
+        Quando realizar a pesquisa de um produto inválido
+        Então deve ver que não foram encontrados resultados
+
     @access_product_categories
     Esquema do Cenário: Acessar as categorias de produtos
         Quando acessa uma categoria "<categoria>"

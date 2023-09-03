@@ -7,7 +7,7 @@ Dado('que esteja na página de um produto') do
 end
 
 Quando('acessar a página do produto') do
-    @products_list.access_product_of_list(0)
+    @search_page.products_list.access_product_of_list 0
     @product = Pages::ProductPage.new
 end
   
@@ -21,23 +21,23 @@ Quando('selecionar uma cor') do
 end
   
 Então('a cor é marcada como selecionada') do
-    expect(@product.select_color_list.last['class']).to include('colorSelected')
+    expect(@product.select_color_list.last['class']).to include 'colorSelected'
 end
 
 Dado('o campo quantidade tem o valor {string}') do |quantity|
-    @product.input_quantity.set(quantity)
+    @product.input_quantity.set quantity
 end
 
 Quando('muda a quantidade {string}') do |event|
-    @product.set_quantity_by_button(event)
+    @product.set_quantity_by_button event
 end
 
 Quando('insere uma quantidade {string}') do |quantity|
-    @product.input_quantity.set(quantity)
+    @product.input_quantity.set quantity
 end
 
 Então('o campo quantidade tem seu valor alterado {string}') do |value|
-  expect(@product.input_quantity.value).to eq(value)
+  expect(@product.input_quantity.value).to eq value
 end
 
 Quando('adiciona uma quantidade do item no carrinho') do
@@ -47,7 +47,7 @@ Quando('adiciona uma quantidade do item no carrinho') do
 end
   
 Então('o item é adicionado corretamente') do
-    expect(@home.header.tool_tip_cart_product_name.last.text).to include(@product.product_name.text.slice(0..20))
+    expect(@home.header.tool_tip_cart_product_name.last.text).to include @product.product_name.text.slice(0..20)
     expect(@home.header.quantity_last_product_add_in_cart.text).to include('QTY: ' + @valid_quantity.to_s)
 end
 
@@ -70,5 +70,5 @@ Quando('volta para página de categorias') do
 end
   
 Então('é redirecionado para página da categoria do produto') do
-    expect(page.driver.current_url).to include('category')
+    expect(page.driver.current_url).to include 'category'
 end

@@ -1,4 +1,5 @@
 valid_product: 'speakers'
+invalid_product: 'ssad21as6da'
 
 footer_follow_us:
   facebook_link: 'btn_facebook'
