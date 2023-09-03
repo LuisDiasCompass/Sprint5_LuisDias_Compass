@@ -17,7 +17,7 @@ Você pode encontrar o arquivo do mapa [clicando aqui](/mapa-mental/)
 
 2. Crie uma pasta onde você colocará os arquivos e abra um terminal do Git Bash a partir dela. Para isso você também precisa ter o [Git](https://git-scm.com/) instalado em seu computador.
 
-3. Digite estes comandos no terminal para clonar os arquivos da calculadora:
+3. Digite estes comandos no terminal para clonar os arquivos:
    ```
    git clone https://github.com/LuisDiasCompass/Sprint5_LuisDias_Compass.git
 
