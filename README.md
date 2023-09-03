@@ -7,7 +7,7 @@ Este é um projeto de automação do site Advantage Online Shopping desenvolvido
 A proposta foi elaborar um mapa mental do site, utilizá-lo como base para criar cenários de testes utilizando a linguagem Gherkin e automatizá-los utilizando a linguagem de programação Ruby juntamente com alguns recursos como Cucumber, Capybara, SitePrism e Selenium. Foram utilizados também massa de dados estática, dinâmica (Faker) e geração de reports automatizados com o Cucumber.
 
 ## Mapa do site Advantage Online Shopping
-Você pode encontrar o arquivo do mapa [clicando aqui](/advantage-online-shopping/mapa-mental/)
+Você pode encontrar o arquivo do mapa [clicando aqui](/mapa-mental/)
 	
 ![Advantage Online Shopping Map](/mapa-mental/advantage-online-shopping.png)
 
