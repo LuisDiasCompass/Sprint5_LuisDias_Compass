@@ -128,7 +128,7 @@ Há algumas formas de executar os testes:
 
 ## Relatório de execução
  * Após a execução dos testes o relatório se encontrará na pasta 'reports' com o nome de 'report.html'.
- * Você pode ver um relatório de execução dos testes [clicando aqui](/reports/report.html)
+ * Você pode ver um relatório de execução dos testes na pasta. [Click aqui](/reports), baixe o arquivo 'report.htm' e abra no seu navegador.
 
 ## Referências
    
