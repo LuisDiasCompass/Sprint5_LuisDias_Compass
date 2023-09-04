@@ -70,7 +70,7 @@ Há algumas formas de executar os testes:
 
 ### Por funcionalidade
 
-* Pode-se executar testes em cada funcionalidade separadamente adicionando a TAG referente a ela:
+* Pode-se executar testes em cada funcionalidade separadamente adicionando a tag referente a ela:
 
    ```
    cucumber -p default -t@home
@@ -85,7 +85,7 @@ Há algumas formas de executar os testes:
 
 ### Por cenário
 
-* Também é possível executar cada cenário de teste exclusivamente com as TAGs abaixo:
+* Também é possível executar cada cenário de teste exclusivamente com as tags abaixo:
     #### HOME PAGE
     - @home_page_load ------------ Carregamento da página
     - @search_valid_product -------- Realizar pesquisa de um produto válido
