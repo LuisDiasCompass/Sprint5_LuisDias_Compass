@@ -37,11 +37,15 @@ jobs:
         bundle install
     - name: Run tests
       run: cucumber -p default -p headless -t@empty_data_login
-    - name: Generate Test Reports
+    - name: Save Cucumber Reports
       run: |
-        # Comandos para gerar relatórios de teste, se aplicável
-    - name: Notify Test Results
+        mv /reports/
+    - name: Commit and Push Reports
       run: |
-        # Comandos para notificar a equipe sobre os resultados dos testes, se aplicável
+        git config --global user.email "github-actions@github.com"
+        git config --global user.name "GitHub Actions"
+        git add reports
+        git commit -m "Adicionar relatório do Cucumber"
+        git push
 
 
