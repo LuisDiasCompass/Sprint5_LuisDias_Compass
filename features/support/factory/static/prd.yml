@@ -12,8 +12,8 @@ footer_follow_us:
   linkedin_url: 'linkedin.com'
 
 valid_user_data:
-  username: 'SEU USUARIO'
-  password: 'SUA SENHA'
+  username: 'testCompass'
+  password: 'Ab123'
 
 invalid_user_data:
   username: 'abcxyz'
