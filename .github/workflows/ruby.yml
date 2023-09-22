@@ -1,4 +1,4 @@
-name: Ruby
+name: Ruby with Cucumber
 
 on:
   push:
@@ -11,35 +11,16 @@ permissions:
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        ruby-version: ['2.5.3']
-
+    container:
+      image: ruby:2.5 # Use a versão de Ruby desejada
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Ruby
-    # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
-    # change this to (see https://github.com/ruby/setup-ruby#versioning):
-    # uses: ruby/setup-ruby@v1
-      uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf # v1.146.0
-      with:
-        ruby-version: ${{ matrix.ruby-version }}
-        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Install Bundler
+        run: gem install bundler
+      - name: Install dependencies
+        run: bundle install
+      - name: Run tests
+        run: bundle exec cucumber -p default -p headless
 
-    - name: log untrusted output
-      run: |
-
-        # disable command workflow processing
-        echo "::stop-commands::`echo -n ${{ github.token }} | sha256sum | head -c 64`"
-
-        # log untrusted output
-        echo "::add-path::$(ruby -e 'puts Gem.user_dir')/bin"
-
-        # enable workflow command processing
-        echo "::`echo -n ${{ github.token }} | sha256sum | head -c 64`::"
-
-        
-    - name: Run tests
-      run: cucumber -p default -p headless
