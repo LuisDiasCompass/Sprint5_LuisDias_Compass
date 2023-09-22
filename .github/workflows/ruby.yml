@@ -27,8 +27,9 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-    - name: Install Cucumber
-      run: gem install cucumber
+    - name: Add Cucumber to PATH
+      run: echo "::add-path::$(ruby -e 'puts Gem.user_dir')/bin"
+
 
     - name: Run tests
       run: cucumber -p default -p headless
