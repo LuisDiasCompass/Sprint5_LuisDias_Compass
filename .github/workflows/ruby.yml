@@ -22,7 +22,15 @@ jobs:
       uses: ruby/setup-ruby@v1 # Use a versão mais recente
       with:
         ruby-version: ${{ matrix.ruby-version }}
-        bundler-cache: true
+    - name: log untrusted output
+      run: |
+        # disable command workflow processing
+        echo "::stop-commands::`echo -n ${{ github.token }} | sha256sum | head -c 64`"
+        # log untrusted output
+        echo "::add-path::$(ruby -e 'puts Gem.user_dir')/bin"
+        echo "::add-path::$(ruby -e 'puts Gem.user_dir')/bin"
+        # enable workflow command processing
+        echo "::`echo -n ${{ github.token }} | sha256sum | head -c 64`::"
     - name: Install dependencies
       run: |
         gem install bundler
