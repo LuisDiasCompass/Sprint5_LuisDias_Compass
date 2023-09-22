@@ -13,7 +13,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     container:
-      image: ruby:2.5 # Use a versão de Ruby desejada
+      image: ruby:2.6 # Use a versão de Ruby desejada
     steps:
       - name: Check out code
         uses: actions/checkout@v2
