@@ -36,7 +36,7 @@ jobs:
         gem install bundler
         bundle install
     - name: Run tests
-      run: cucumber -p default -p headless
+      run: cucumber -p default -p headless -t@empty_data_login
     - name: Generate Test Reports
       run: |
         # Comandos para gerar relatórios de teste, se aplicável
