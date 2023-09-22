@@ -1,4 +1,4 @@
-name: Ruby with Cucumber
+name: Ruby
 
 on:
   push:
@@ -12,15 +12,28 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-latest
-    container:
-      image: ruby:2.6 # Use a versão de Ruby desejada
+    strategy:
+      matrix:
+        ruby-version: ['2.6']
+
     steps:
-      - name: Check out code
-        uses: actions/checkout@v2
-      - name: Install Bundler
-        run: gem install bundler
-      - name: Install dependencies
-        run: bundle install
-      - name: Run tests
-        run: bundle exec cucumber -p default -p headless
+    - uses: actions/checkout@v3
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1 # Use a versão mais recente
+      with:
+        ruby-version: ${{ matrix.ruby-version }}
+        bundler-cache: true
+    - name: Install dependencies
+      run: |
+        gem install bundler
+        bundle install
+    - name: Run tests
+      run: cucumber -p default -p headless
+    - name: Generate Test Reports
+      run: |
+        # Comandos para gerar relatórios de teste, se aplicável
+    - name: Notify Test Results
+      run: |
+        # Comandos para notificar a equipe sobre os resultados dos testes, se aplicável
+
 
