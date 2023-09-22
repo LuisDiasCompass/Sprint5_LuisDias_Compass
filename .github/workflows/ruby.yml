@@ -37,9 +37,6 @@ jobs:
         bundle install
     - name: Run tests
       run: cucumber -p default -p headless -t@empty_data_login
-    - name: Save Cucumber Reports
-      run: |
-        mv /* reports/
     - name: Commit and Push Reports
       run: |
         git config --global user.email "github-actions@github.com"
